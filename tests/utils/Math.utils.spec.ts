@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { sum } from '../utils/Math.utlis'
+import { sum } from '../../utils/Math.utlis'
 
 test('it should add two numbers', () => {
   const actual = sum(1, 2)
