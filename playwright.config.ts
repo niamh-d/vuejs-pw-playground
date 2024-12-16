@@ -1,7 +1,7 @@
 import process from 'node:process'
 import { defineConfig, devices } from '@playwright/test'
 
-const testDir = './tests'
+const testDir = './e2e'
 
 /**
  * Read environment variables from file.
