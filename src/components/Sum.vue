@@ -21,22 +21,13 @@ export default {
 
 <template>
   <div class="p-10">
-    <h2 class="font-semi-bold text-2xl">Sum two numbers</h2>
-    <div class="flex gap-4">
+    <h2 class="font-semi-bold text-2xl mb-3">Sum two numbers</h2>
+    <div class="flex gap-4 items-center">
       <input name="num_a" class="input" type="number" v-model="a" />
+      <span class="text-xl">+</span>
       <input name="num_b" class="input" type="number" v-model="b" />
-      <button type="button" @click="onClick()">Calculate</button>
+      <button type="button" class="button" @click="onClick()">Calculate</button>
     </div>
-    <p data-testid="sum-result" class="text-xl">Result: {{ result }}</p>
+    <p data-testid="sum-result" class="mt-2 text-xl">Result: {{ result }}</p>
   </div>
 </template>
-
-<style scoped>
-.input {
-  width: 100px;
-  height: 40px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-</style>
