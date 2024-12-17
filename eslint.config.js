@@ -17,7 +17,7 @@ export default [
       '**/coverage/**',
       'node_modules/**',
       'playwright-report/**',
-      'playwright/**',
+      'playwright/.cache/**',
     ],
   },
 
