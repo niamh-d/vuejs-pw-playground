@@ -1,18 +1,23 @@
-import { test, expect } from '@playwright/experimental-ct-vue'
+import { test, expect, MountResultJsx } from '@playwright/experimental-ct-vue'
 import String from '../../src/components/String.vue'
+import { Locator } from '@playwright/test'
 
-test('should work', async ({ mount }) => {
-  const component = await mount(String)
-  const result = component.getByTestId('string-result')
-  await expect(result).toHaveText(/result/i)
+let component: MountResultJsx
+let resultText: Locator
+
+test.beforeEach(async ({ mount }) => {
+  component = await mount(String)
+  resultText = component.getByTestId('string-result')
 })
 
-test('should capitalize a string', async ({ mount }) => {
-  const component = await mount(String)
+test('should work', async () => {
+  await expect(resultText).toHaveText(/result/i)
+})
+
+test('should capitalize a string', async () => {
   const input = component.locator('input')
   await input.fill('hello')
-  const button = component.getByRole('button', { name: /capitalise/i })
+  const button = component.getByRole('button', { name: /capitalize/i })
   await button.click()
-  const result = component.getByTestId('string-result')
-  expect(await result.textContent()).toContain('Hello')
+  expect(await resultText.textContent()).toContain('Hello')
 })
