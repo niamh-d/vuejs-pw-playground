@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename) // get the name of the directory
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests/components',
+  testDir: './playwright',
   /* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */
   snapshotDir: './__snapshots__',
   /* Maximum time one test can run for. */
