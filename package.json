@@ -1,6 +1,9 @@
 {
   "name": "vuejs-pw-tutorial-playground",
   "version": "0.0.0",
+  "author": "Niamh Doyle (Github: @niamh-d)",
+  "homepage": "niamhdoyle.dev",
+  "license": "CC-BY-NC-ND-4.0",
   "private": true,
   "type": "module",
   "scripts": {
