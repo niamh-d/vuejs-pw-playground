@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable playwright/expect-expect */
 import { test, expect } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
@@ -9,28 +11,7 @@ test('validates heading', async ({ page }) => {
 })
 
 test('validates string result', async ({ page }) => {
-  const stringResultA = page.getByTestId('string-result-A')
-  const stringResultB = page.getByTestId('string-result-B')
-  const stringResultC = page.getByTestId('string-result-C')
-
-  await expect.soft(stringResultA).toBeHidden()
-  await expect.soft(stringResultB).toBeHidden()
-  await expect.soft(stringResultC).toBeHidden()
-
-  expect.soft(stringResultA).toBeDefined()
-  expect.soft(stringResultB).toBeDefined()
-  expect.soft(stringResultC).toBeDefined()
-
-  const input = page.locator('input[name="string"]')
-  await expect.soft(input).toBeEnabled()
-  await input.fill('hello')
-  await expect.soft(input).toHaveValue('hello')
-  const button = page.getByRole('button', { name: /capitalize/i })
-  await button.click()
-
-  await expect.soft(stringResultA).toHaveText('Result: Hello')
-  await expect.soft(stringResultB).toBeVisible()
-  await expect.soft(stringResultC).toBeInViewport()
+  // write test here
 })
 
 test('validates sum result', async ({ page }) => {

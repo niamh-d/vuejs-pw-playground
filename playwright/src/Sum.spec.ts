@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { test, expect, MountResultJsx } from '@playwright/experimental-ct-vue'
 import { Locator } from '@playwright/test'
 import Sum from '../../src/components/Sum.vue'
@@ -16,11 +17,6 @@ test('should work', async () => {
 
 test('should add two numbers', async () => {
   const firstInput = component.locator('input[name="num_a"]')
-  const secondInput = component.locator('input[name="num_b"]')
 
-  await firstInput.fill('1')
-  await secondInput.fill('2')
-  await component.getByRole('button', { name: 'Calculate' }).click()
-
-  expect(await resultText.textContent()).toContain('3')
+  // write test here
 })
