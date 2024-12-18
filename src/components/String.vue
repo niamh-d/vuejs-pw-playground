@@ -20,10 +20,10 @@ export default {
 
 <template>
   <div class="p-10">
-    <h2 class="font-semi-bold text-2xl">Capitalize a string</h2>
+    <h2 class="font-semi-bold text-2xl mb-3">Capitalize a string</h2>
     <div class="flex gap-4 items-center">
       <input name="string" class="input" type="text" v-model="string" />
-      <button type="button" class="button" @click="onClick()">Capitalize</button>
+      <button type="button" class="flex-center btn-primary" @click="onClick()">Capitalize</button>
     </div>
     <p data-testid="string-result" class="mt-2 text-xl">Result: {{ result }}</p>
   </div>

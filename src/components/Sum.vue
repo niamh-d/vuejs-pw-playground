@@ -26,7 +26,7 @@ export default {
       <input name="num_a" class="input" type="number" v-model="a" />
       <span class="text-xl">+</span>
       <input name="num_b" class="input" type="number" v-model="b" />
-      <button type="button" class="button" @click="onClick()">Calculate</button>
+      <button type="button" class="flex-center btn-primary" @click="onClick()">Calculate</button>
     </div>
     <p data-testid="sum-result" class="mt-2 text-xl">Result: {{ result }}</p>
   </div>
