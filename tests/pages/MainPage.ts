@@ -11,13 +11,13 @@ export default class MainPage {
   private readonly sumResult: Locator
   private readonly stringInput: Locator
   private readonly capitalizeButton: Locator
-  private readonly stringResult: Locator
+  private readonly stringResultA: Locator
 
   constructor(page: Page) {
     this.page = page
     this.heading = this.page.getByTestId('heading')
     this.sumResult = this.page.getByTestId('sum-result')
-    this.stringResult = this.page.getByTestId('string-result')
+    this.stringResultA = this.page.getByTestId('string-result-A')
     this.sumInputA = this.page.locator('input[name="num_a"]')
     this.sumInputB = this.page.locator('input[name="num_b"]')
     this.calculateButton = this.page.getByRole('button', { name: /calculate/i })
@@ -41,9 +41,20 @@ export default class MainPage {
   }
 
   public async validateStringResult(): Promise<void> {
-    await this.fillInput(this.stringInput, 'hello')
+    await this.validateInput(this.stringInput, 'hello')
     await this.capitalizeButton.click()
-    await expect.soft(this.stringResult).toHaveText('Result: Hello')
+    await this._validateStringResult()
+  }
+
+  private async _validateStringResult(): Promise<void> {
+    await expect.soft(this.stringResultA).toBeVisible()
+    await expect.soft(this.stringResultA).toHaveText('Result: Hello')
+  }
+
+  private async validateInput(input: Locator, value: string): Promise<void> {
+    await expect.soft(input).toBeEnabled()
+    await input.fill(value)
+    await expect.soft(input).toHaveValue(value)
   }
 
   private async fillInput(input: Locator, value: string): Promise<void> {

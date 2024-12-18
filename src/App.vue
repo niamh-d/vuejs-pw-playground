@@ -15,14 +15,13 @@ export default {
 <template>
   <div class="container">
     <h1 data-testid="heading" class="font-bold text-3xl">Vue.js-Playwright testing tutorial</h1>
-    <SumComponent />
     <StringComponent />
-    <div></div>
+    <SumComponent />
   </div>
 </template>
 
 <style scoped>
 .container {
-  margin: 10px;
+  margin: 20px;
 }
 </style>

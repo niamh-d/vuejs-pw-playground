@@ -16,9 +16,11 @@ test('should work', async () => {
 
 test('should add two numbers', async () => {
   const firstInput = component.locator('input[name="num_a"]')
-  await firstInput.fill('1')
   const secondInput = component.locator('input[name="num_b"]')
+
+  await firstInput.fill('1')
   await secondInput.fill('2')
   await component.getByRole('button', { name: 'Calculate' }).click()
+
   expect(await resultText.textContent()).toContain('3')
 })

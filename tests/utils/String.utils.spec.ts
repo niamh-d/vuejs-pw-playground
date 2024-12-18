@@ -5,5 +5,8 @@ test('it should capitalize a string', () => {
   const actual = capitalize('hello')
   const expected = 'Hello'
 
-  expect(actual).toBe(expected)
+  expect.soft(actual).toBe(expected)
+  expect.soft(actual).not.toBe('hello')
+  expect.soft(actual).toContain('ell')
+  expect.soft(actual).not.toContain('hell')
 })

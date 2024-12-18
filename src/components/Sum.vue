@@ -21,7 +21,7 @@ export default {
 
 <template>
   <div class="p-10">
-    <h2 class="font-semi-bold text-2xl mb-3">Sum two numbers</h2>
+    <h2 class="heading-2">Sum two numbers</h2>
     <div class="flex gap-4 items-center">
       <input name="num_a" class="input" type="number" v-model="a" />
       <span class="text-xl">+</span>
